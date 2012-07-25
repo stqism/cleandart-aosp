@@ -1,0 +1,36 @@
+============================================
+PLATFORM_VERSION_CODENAME=REL
+PLATFORM_VERSION=2.3.7
+TARGET_PRODUCT=generic
+TARGET_BUILD_VARIANT=eng
+TARGET_SIMULATOR=false
+TARGET_BUILD_TYPE=release
+TARGET_BUILD_APPS=
+TARGET_ARCH=arm
+HOST_ARCH=x86
+HOST_OS=linux
+HOST_BUILD_TYPE=release
+BUILD_ID=GWK74
+============================================
+host C: libclearsilver-jni <= external/clearsilver/java-jni/j_neo_util.c
+host C: libclearsilver-jni <= external/clearsilver/java-jni/j_neo_cs.c
+host StaticLib: libhost (out/host/linux-x86/obj/STATIC_LIBRARIES/libhost_intermediates/libhost.a)
+echo out/host/linux-x86/obj/STATIC_LIBRARIES/libhost_intermediates/pseudolocalize.o out/host/linux-x86/obj/STATIC_LIBRARIES/libhost_intermediates/CopyFile.o | xargs ar crsP  out/host/linux-x86/obj/STATIC_LIBRARIES/libhost_intermediates/libhost.a
+host SharedLib: libneo_util (out/host/linux-x86/obj/lib/libneo_util.so)
+host C++: libutils <= frameworks/base/libs/utils/RefBase.cpp
+host C++: libutils <= frameworks/base/libs/utils/TextOutput.cpp
+host C++: libutils <= frameworks/base/libs/utils/Threads.cpp
+host C++: libutils <= frameworks/base/libs/utils/Timers.cpp
+host C++: libutils <= frameworks/base/libs/utils/VectorImpl.cpp
+host C++: libutils <= frameworks/base/libs/utils/ZipFileCRO.cpp
+host C++: libutils <= frameworks/base/libs/utils/ZipFileRO.cpp
+host C++: libutils <= frameworks/base/libs/utils/ZipUtils.cpp
+host C++: libutils <= frameworks/base/libs/utils/misc.cpp
+host C: liblog <= system/core/liblog/logd_write.c
+host C: liblog <= system/core/liblog/logprint.c
+host C: liblog <= system/core/liblog/event_tag_map.c
+host C: liblog <= system/core/liblog/fake_log_device.c
+host C: libcutils <= system/core/libcutils/atomic.c
+host C: libcutils <= system/core/libcutils/array.c
+host C: libcutils <= system/core/libcutils/hashmap.c
+host C: libcutils <= system/core/libcutils/native_handle.c

@@ -1,0 +1,1 @@
+cmd_drivers/usb/c67x00/c67x00.o := /root/dev/toolchain/bin/arm-none-eabi-ld -EL    -r -o drivers/usb/c67x00/c67x00.o drivers/usb/c67x00/c67x00-drv.o drivers/usb/c67x00/c67x00-ll-hpi.o drivers/usb/c67x00/c67x00-hcd.o drivers/usb/c67x00/c67x00-sched.o 

@@ -1,0 +1,15 @@
+#
+# configuration written to .config
+#
+scripts/kconfig/conf -s arch/arm/Kconfig
+  CHK     include/linux/version.h
+  SYMLINK include/asm -> include/asm-arm
+make[1]: `include/asm-arm/mach-types.h' is up to date.
+  CHK     include/linux/utsrelease.h
+  CALL    scripts/checksyscalls.sh
+  CHK     include/linux/compile.h
+  CC      drivers/usb/core/hcd.o
+  GZIP    kernel/config_data.gz
+  IKCFG   kernel/config_data.h
+  CC      kernel/configs.o
+  LD      kernel/built-in.o
