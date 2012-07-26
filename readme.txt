@@ -1,4 +1,5 @@
-CleanDart AOSP Build instructions for debian linux, setup is the only distro specific part.
+################################################################################
+CleanDart AOSP Dependicies
 ################################################################################
 Setup:
 	- Required packages by system: (via http://source.android.com/source/initializing.html)
@@ -41,21 +42,24 @@ $ sudo ln -s /usr/lib/i386-linux-gnu/mesa/libGL.so.1 /usr/lib/i386-linux-gnu/lib
 
 
 ################################################################################
-kernel build instructions:
+cleanDart-aosp setup
 ################################################################################
 
-1. How to Build
-        - get the Toolchain
+Setup
+	- Execute the following commands in a shell, $ dictates a new line
 		
 		$ cd /opt
                 $ wget http://www.codesourcery.com/sgpp/lite/arm/portal/package7813/public/arm-none-eabi/arm-2010.09-51-arm-none-eabi-i686-pc-linux-gnu.tar.bz2
 		$ tar -xjf arm-2010.09-51-arm-none-eabi-i686-pc-linux-gnu.tar.bz2
 		$ rm arm-2010.09-51-arm-none-eabi-i686-pc-linux-gnu.tar.bz2
 		$ mv arm-2010.09 toolchain
-		$ mkdir /opt/toolchain/prebuilt
-		$ ln -s /opt/toolchain/prebuilt aosp/prebuilt
+		$ cd /opt/toolchain
 		$ git clone https://android.googlesource.com/platform/prebuilt -b android-2.3.7_r1
-
+		$ cd /opt/dart-aosp
+		$ ln -s /opt/toolchain/prebuilt aosp/prebuilt
+################################################################################
+Kernel build instructions
+################################################################################
         - run make_kernel.sh
                 $ cd kernel
                 $ ./make_kernel_tass_tmo.sh
@@ -65,20 +69,22 @@ kernel build instructions:
         - Kernel : kernel/arch/arm/boot/zImage
 
 ################################################################################
-Boot.img creating instructions:
+Boot.img/ramdisk creation instructions
+################################################################################
 	- Create a ramdisk
+		$ cd /opt/dart-aosp
 		$ cp kernel/arch/arm/boot/zImage ramdisk
 		$ cd ramdisk
 		$ mv zImage ..
 		$ find . | cpio -o -H newc | gzip > ../ramdisk.cpio.gz
 		$ cd ..;bin/mkbootimg --cmdline 'no_console_suspend=1 console=null' --kernel zImage --ramdisk ramdisk.cpio.gz -o boot.img
 ################################################################################
-AOSP Build instructions:
+AOSP Build instructions
+################################################################################
 	- Notice: this currently results in an error while building
 		Fix underway
 
-	- Open a shell
-		$ cd aosp
+		$ cd /opt/dart-aosp/aosp
 		$ . build/envsetup.sh
 		$ lunch 1
 		$ make -j16
