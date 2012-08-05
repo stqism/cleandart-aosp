@@ -1,4 +1,4 @@
-################################################################################
+th################################################################################
 CleanDart AOSP Dependicies
 ################################################################################
 Setup:
@@ -33,11 +33,7 @@ $ sudo apt-get install libx11-dev:i386
 Installing required packages (Ubuntu 12.04)
 Building on Ubuntu 12.04 is currently only experimentally supported and is not guaranteed to work on branches other than master.
 
-$ sudo apt-get install git-core gnupg flex bison gperf build-essential \
-  zip curl libc6-dev libncurses5-dev:i386 x11proto-core-dev \
-  libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-glx:i386 \
-  libgl1-mesa-dev g++-multilib mingw32 openjdk-6-jdk tofrodos \
-  python-markdown libxml2-utils xsltproc zlib1g-dev:i386
+$ sudo apt-get install git-core gnupg flex bison gperf build-essential   zip curl libc6-dev libncurses5-dev:i386 x11proto-core-dev   libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-glx:i386   libgl1-mesa-dev g++-multilib mingw32 openjdk-6-jdk tofrodos   python-markdown libxml2-utils xsltproc zlib1g-dev:i386 gcc g++ gcc-multilib g++ g++-4.6-multilib cpp cpp-4.6 g++-4.6 gcc-4.6
 $ sudo ln -s /usr/lib/i386-linux-gnu/mesa/libGL.so.1 /usr/lib/i386-linux-gnu/libGL.so
 
 
